@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>frontend -Html|css|javascript</title>
+	<style>
+
+		body{
+			font-family: monospace;
+
+		}
+
+/* container styling		*/
+		.container{
+			width:340px;
+			margin:150px auto;
+/*			border:1px solid lightgray;*/
+			text-align: center;
+			padding:12px 20px;
+
+			& h2{
+				color:orangered;
+				font-size:25px;
+			}
+
+			& p {
+				color:gray;
+				font-family: !important;
+			}
+		}
+		.flex{
+			display:flex;
+			box-sizing: border-box;
+			margin:10px;
+			gap:4px;
+
+		}
+
+		input{
+			padding:12px 20px;
+			width:50%;
+			border:1px solid lightgray;
+			border-radius:10px;
+			&:focus{
+				outline: 1px solid dodgerblue;
+			}
+		}
+/*   styling container closed */
+    
+
+/*  Button Styling  */
+
+	 .btn{
+	 	color:white;
+	 	background: black;
+	 	font-size: 18px;
+	 	padding:12px 30px;
+	 	cursor: pointer;
+	 	border-radius: 14px;
+	 	border:none;
+	 	margin-bottom: 12px;
+	 	width:95%;
+	 }	
+
+	 #result{
+	 	color:white;
+	 	background: coral;
+	 	padding:12px 20px;
+	 	border-radius: 2px;
+	 	display: none;
+	 	font-family: monospace;
+	 }
+	</style>
+</head>
+<body>
+   <div class="container">
+      <h2>Split 😂😂Calculator </h2>
+         <h4 id="result"></h4>
+       <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+
+        <div class="flex">
+        	 <input type="text" placeholder="enter amount" id="input-amount">
+             <input type="text" placeholder="enter person" id="input-person">
+        </div>
+      
+
+        <button class="btn" onclick="split()">Split Calculate</button>
+   	   
+   </div>
+
+
+   <script>
+
+   	 let amount = document.getElementById('input-amount')
+   	 let person = document.getElementById('input-person')
+
+      
+     let result = document.getElementById('result');
+
+      const split =()=>{
+      	 let cal = amount.value/person.value;
+      	 result.innerText = cal.toFixed(2);
+      	 result.style.display="block";
+
+         
+
+         amount.value ="";
+         person.value ="";
+
+      }
+   	
+   </script>
+</body>
+</html>
